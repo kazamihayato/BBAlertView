@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DFC2BCF1C97F312003FEE15 /* BBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFC2BCE1C97F312003FEE15 /* BBButton.m */; };
 		CC709C9F1C8FF13B00AA93E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709C9E1C8FF13B00AA93E7 /* main.m */; };
 		CC709CA21C8FF13B00AA93E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CA11C8FF13B00AA93E7 /* AppDelegate.m */; };
 		CC709CA51C8FF13B00AA93E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CA41C8FF13B00AA93E7 /* ViewController.m */; };
@@ -15,6 +16,13 @@
 		CC709CAD1C8FF13B00AA93E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC709CAB1C8FF13B00AA93E7 /* LaunchScreen.storyboard */; };
 		CC709CB81C8FF13B00AA93E7 /* BBAlerViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CB71C8FF13B00AA93E7 /* BBAlerViewDemoTests.m */; };
 		CC709CC31C8FF13B00AA93E7 /* BBAlerViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CC21C8FF13B00AA93E7 /* BBAlerViewDemoUITests.m */; };
+		CC709CE61C8FF34800AA93E7 /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CE01C8FF34800AA93E7 /* FAImageView.m */; };
+		CC709CE71C8FF34800AA93E7 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC709CE11C8FF34800AA93E7 /* FontAwesome.ttf */; };
+		CC709CE81C8FF34800AA93E7 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CE31C8FF34800AA93E7 /* NSString+FontAwesome.m */; };
+		CC709CE91C8FF34800AA93E7 /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CE51C8FF34800AA93E7 /* UIFont+FontAwesome.m */; };
+		CC709CEC1C8FF36300AA93E7 /* BBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CEB1C8FF36300AA93E7 /* BBAlertView.m */; };
+		CC709CF01C9003A500AA93E7 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CEF1C9003A500AA93E7 /* UIView+Category.m */; };
+		CC709CF41C90075900AA93E7 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CC709CF31C90075900AA93E7 /* Utility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DFC2BCD1C97F312003FEE15 /* BBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBButton.h; sourceTree = "<group>"; };
+		3DFC2BCE1C97F312003FEE15 /* BBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBButton.m; sourceTree = "<group>"; };
 		CC709C9A1C8FF13B00AA93E7 /* BBAlerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBAlerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC709C9E1C8FF13B00AA93E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC709CA01C8FF13B00AA93E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +61,19 @@
 		CC709CBE1C8FF13B00AA93E7 /* BBAlerViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBAlerViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC709CC21C8FF13B00AA93E7 /* BBAlerViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAlerViewDemoUITests.m; sourceTree = "<group>"; };
 		CC709CC41C8FF13B00AA93E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC709CDF1C8FF34800AA93E7 /* FAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
+		CC709CE01C8FF34800AA93E7 /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAImageView.m; sourceTree = "<group>"; };
+		CC709CE11C8FF34800AA93E7 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		CC709CE21C8FF34800AA93E7 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		CC709CE31C8FF34800AA93E7 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		CC709CE41C8FF34800AA93E7 /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontAwesome.h"; sourceTree = "<group>"; };
+		CC709CE51C8FF34800AA93E7 /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAwesome.m"; sourceTree = "<group>"; };
+		CC709CEA1C8FF36300AA93E7 /* BBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAlertView.h; sourceTree = "<group>"; };
+		CC709CEB1C8FF36300AA93E7 /* BBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAlertView.m; sourceTree = "<group>"; };
+		CC709CEE1C9003A500AA93E7 /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		CC709CEF1C9003A500AA93E7 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
+		CC709CF21C90075900AA93E7 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		CC709CF31C90075900AA93E7 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +101,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DFC2BC91C97EA4B003FEE15 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC2BCD1C97F312003FEE15 /* BBButton.h */,
+				3DFC2BCE1C97F312003FEE15 /* BBButton.m */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
 		CC709C911C8FF13A00AA93E7 = {
 			isa = PBXGroup;
 			children = (
+				CC709CD01C8FF2B200AA93E7 /* Classes */,
 				CC709C9C1C8FF13B00AA93E7 /* BBAlerViewDemo */,
 				CC709CB61C8FF13B00AA93E7 /* BBAlerViewDemoTests */,
 				CC709CC11C8FF13B00AA93E7 /* BBAlerViewDemoUITests */,
@@ -138,6 +171,59 @@
 				CC709CC41C8FF13B00AA93E7 /* Info.plist */,
 			);
 			path = BBAlerViewDemoUITests;
+			sourceTree = "<group>";
+		};
+		CC709CD01C8FF2B200AA93E7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3DFC2BC91C97EA4B003FEE15 /* Button */,
+				CC709CF11C90072600AA93E7 /* Utility */,
+				CC709CED1C90036700AA93E7 /* Category */,
+				CC709CDE1C8FF34800AA93E7 /* fontawesome */,
+				CC709CD11C8FF2E400AA93E7 /* BBAlertView */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CC709CD11C8FF2E400AA93E7 /* BBAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				CC709CEA1C8FF36300AA93E7 /* BBAlertView.h */,
+				CC709CEB1C8FF36300AA93E7 /* BBAlertView.m */,
+			);
+			path = BBAlertView;
+			sourceTree = "<group>";
+		};
+		CC709CDE1C8FF34800AA93E7 /* fontawesome */ = {
+			isa = PBXGroup;
+			children = (
+				CC709CDF1C8FF34800AA93E7 /* FAImageView.h */,
+				CC709CE01C8FF34800AA93E7 /* FAImageView.m */,
+				CC709CE11C8FF34800AA93E7 /* FontAwesome.ttf */,
+				CC709CE21C8FF34800AA93E7 /* NSString+FontAwesome.h */,
+				CC709CE31C8FF34800AA93E7 /* NSString+FontAwesome.m */,
+				CC709CE41C8FF34800AA93E7 /* UIFont+FontAwesome.h */,
+				CC709CE51C8FF34800AA93E7 /* UIFont+FontAwesome.m */,
+			);
+			path = fontawesome;
+			sourceTree = "<group>";
+		};
+		CC709CED1C90036700AA93E7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CC709CEE1C9003A500AA93E7 /* UIView+Category.h */,
+				CC709CEF1C9003A500AA93E7 /* UIView+Category.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		CC709CF11C90072600AA93E7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CC709CF21C90075900AA93E7 /* Utility.h */,
+				CC709CF31C90075900AA93E7 /* Utility.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +332,7 @@
 				CC709CAD1C8FF13B00AA93E7 /* LaunchScreen.storyboard in Resources */,
 				CC709CAA1C8FF13B00AA93E7 /* Assets.xcassets in Resources */,
 				CC709CA81C8FF13B00AA93E7 /* Main.storyboard in Resources */,
+				CC709CE71C8FF34800AA93E7 /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +357,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFC2BCF1C97F312003FEE15 /* BBButton.m in Sources */,
+				CC709CEC1C8FF36300AA93E7 /* BBAlertView.m in Sources */,
+				CC709CE81C8FF34800AA93E7 /* NSString+FontAwesome.m in Sources */,
 				CC709CA51C8FF13B00AA93E7 /* ViewController.m in Sources */,
+				CC709CE61C8FF34800AA93E7 /* FAImageView.m in Sources */,
+				CC709CF41C90075900AA93E7 /* Utility.m in Sources */,
 				CC709CA21C8FF13B00AA93E7 /* AppDelegate.m in Sources */,
 				CC709C9F1C8FF13B00AA93E7 /* main.m in Sources */,
+				CC709CF01C9003A500AA93E7 /* UIView+Category.m in Sources */,
+				CC709CE91C8FF34800AA93E7 /* UIFont+FontAwesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +590,7 @@
 				CC709CC91C8FF13B00AA93E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC709CCA1C8FF13B00AA93E7 /* Build configuration list for PBXNativeTarget "BBAlerViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +599,7 @@
 				CC709CCC1C8FF13B00AA93E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC709CCD1C8FF13B00AA93E7 /* Build configuration list for PBXNativeTarget "BBAlerViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +608,7 @@
 				CC709CCF1C8FF13B00AA93E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
