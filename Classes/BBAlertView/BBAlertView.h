@@ -25,20 +25,20 @@ typedef enum
 @property(nonatomic,strong)NSString * state;
 @property(nonatomic,strong)UIColor  * infoColor;
 
-+(void)showDialogueWithTitle:(NSString*)title
++(void) showDialogueWithTitle:(NSString*)title
                      message:(NSString*)message
                 confirmBlock:(dispatch_block_t)confirmBlock;
 
-+(void)showTopSuccess:(NSString*)successInfo;
++(void) showTopSuccess:(NSString*)successInfo;
 
-+(void)showTopFailed:(NSString*)failedInfo;
++(void) showTopFailed:(NSString*)failedInfo;
 
-+(void)showTopWarning:(NSString*)warningInfo;
++(void) showTopWarning:(NSString*)warningInfo;
 
-+(void)showSuccessNotice:(NSString*)successInfo
++(void) showSuccessNotice:(NSString*)successInfo
           disappearBlock:(dispatch_block_t)disappearBlock;
 
-+(void)showFailedNotice:(NSString*)failInfo
++(void) showFailedNotice:(NSString*)failInfo
          disappearBlock:(dispatch_block_t)disappearBlock;
 
 

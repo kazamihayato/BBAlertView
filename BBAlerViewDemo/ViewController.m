@@ -23,14 +23,17 @@
     [super viewDidLoad];
     [ShowBtnTitles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        BBButton*btn=[[BBButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-250*displayScale)/2, 30*(idx+1)+30*displayScale*idx, 250*displayScale, 30*displayScale)];
-        btn.bgColor=[UIColor colorWithRed:18.0f/255.0f green:120.0f/255.0f blue:236.0f/255.0f alpha:1];
-        btn.buttonStyle=ButtonStyleBorder;
+        BBButton*btn    = [[BBButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-250*displayScale)/2, 30*(idx+1)+30*displayScale*idx, 250*displayScale, 30*displayScale)];
+        btn.bgColor     = [UIColor colorWithRed:18.0f/255.0f green:120.0f/255.0f blue:236.0f/255.0f alpha:1];
+        btn.buttonStyle = ButtonStyleBorder;
+        btn.tag         = 100+idx;
         
-        [btn setTitle:(NSString*)obj forState:UIControlStateNormal];
+        [btn setTitle :(NSString*)obj forState:UIControlStateNormal];
+        
         [btn addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
-        btn.tag=100+idx;
+        
         [self.view addSubview:btn];
+        
     }];
 }
 -(void)btnPressed:(UIButton*)btn

@@ -22,6 +22,7 @@
     {
         _layerBackground                    = [CALayer layer];
         [self.layer insertSublayer:self.layerBackground atIndex:0];
+        
         self.layerBackground.frame          = self.bounds;
         self.layerBackground.masksToBounds  = YES;
         self.layerBackground.cornerRadius   = 3.0f;
@@ -36,6 +37,7 @@
         {
             [self.layerBackground setBackgroundColor:self.bgColor.CGColor];
             [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
             self.layer.borderColor = [UIColor clearColor].CGColor;
             self.layer.borderWidth = 0.0f;
             
