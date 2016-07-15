@@ -9,24 +9,22 @@
 #import "BBAlertView.h"
 #import "UIFont+FontAwesome.h"
 #import "NSString+FontAwesome.h"
-#import "UIView+Category.h"
-#import "Utility.h"
-#import "BBButton.h"
 
+#define SCREEN_WIDTH                 [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT                [[UIScreen mainScreen] bounds].size.height
 #define AlertViewTitles     [NSArray arrayWithObjects:@"取消",@"确定",nil]
 #define Text_DarkGray_Color [UIColor colorWithWhite:0.322 alpha:1.000]
 #define SuccessColor        [UIColor colorWithRed:47/255.0f green:204/255.0f blue:112/255.0f alpha:1]
 #define FailColor           [UIColor colorWithRed:232/255.0f green:78/255.0f blue:60/255.0f alpha:1]
 #define WaringColor         [UIColor colorWithRed:230.0f/255.0f green:95.0f/255.0f blue:7.0f/255.0f alpha:1]
 
-#define AlertWidth      270 * displayScale
-#define AlertGap        10  * displayScale
-#define BtnViewHeight   55  * displayScale
-#define BtnWidth        110 * displayScale
-#define BtnHeight       28  * displayScale
-#define TapWidth        250 * displayScale
-#define NoticeWidth     180 * displayScale
-
+#define AlertWidth      270.0f
+#define AlertGap        10.0f
+#define BtnViewHeight   55.0f
+#define BtnWidth        110.0f
+#define BtnHeight       28.0f
+#define TapWidth        250.0f
+#define NoticeWidth     180.0f
 
 static const CGFloat waringHeight       =64.0f;
 
@@ -98,7 +96,7 @@ static const CGFloat waringHeight       =64.0f;
 
 -(CGFloat)createMessageWith:(NSString*)message titlePart:(CGFloat)titleHight
 {
-    CGFloat messageHeight           = [Utility heightWithString:message fontSize:14 width:NoticeWidth-2*AlertGap];
+    CGFloat messageHeight           = [self heightWithString:message fontSize:14 width:NoticeWidth-2*AlertGap];
     self.messageLabel               = [[UILabel alloc] initWithFrame:CGRectMake(AlertGap, titleHight+AlertGap, NoticeWidth-2*AlertGap, messageHeight)];
     self.messageLabel.font          = [UIFont boldSystemFontOfSize:14];
     self.messageLabel.textColor     = [UIColor grayColor];
@@ -115,7 +113,7 @@ static const CGFloat waringHeight       =64.0f;
     UIView*btnView      = [[UIView alloc] initWithFrame:CGRectMake(0, messageHeight, NoticeWidth, BtnViewHeight)];
     [self.contentView addSubview:btnView];
     
-    CGFloat sheetHeight = [Utility heightWithString:@"点击以关闭" fontSize:12 width:TapWidth];
+    CGFloat sheetHeight = [self heightWithString:@"点击以关闭" fontSize:12 width:TapWidth];
     UILabel *label      = [[UILabel alloc] initWithFrame:CGRectMake((NoticeWidth-TapWidth)/2, AlertGap,TapWidth, sheetHeight)];
     label.text          = @"点击以关闭";
     label.textColor     = [UIColor grayColor];
@@ -131,10 +129,10 @@ static const CGFloat waringHeight       =64.0f;
 }
 -(void)show
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         self.bgView.alpha = 0.5;
     }];
-    [self addToSuperview];
+    [self addToWindow];
     
     self.contentView.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame) - self.contentView.frame.size.height);
     _animator               = [[UIDynamicAnimator alloc] initWithReferenceView:self];
@@ -167,8 +165,8 @@ static const CGFloat waringHeight       =64.0f;
             [_animator removeBehavior:behavior];
         }
     }
-    [UIView animateWithDuration:0.3f
-                          delay:0.1f
+    [UIView animateWithDuration:0.2f
+                          delay:0.0f
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
                          self.alpha = 0.0f;
@@ -242,7 +240,7 @@ static const CGFloat waringHeight       =64.0f;
     
     [self addSubview:self.titleLabel];
     
-    CGFloat infoHeight              = [Utility heightWithString:noticeInfo fontSize:15 width:AlertWidth];
+    CGFloat infoHeight              = [self heightWithString:noticeInfo fontSize:15 width:AlertWidth];
     self.messageLabel               = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.titleLabel.frame), (waringHeight-infoHeight)/2+5, SCREEN_WIDTH-CGRectGetMaxX(self.titleLabel.frame)*2, infoHeight)];
     self.messageLabel.text          = noticeInfo;
     self.messageLabel.textColor     = [UIColor whiteColor];
@@ -253,7 +251,7 @@ static const CGFloat waringHeight       =64.0f;
 }
 -(void)show
 {
-    [self addToSuperview];
+    [self addToWindow];
     [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:1 options:UIViewAnimationOptionCurveLinear animations:^{
         
         self.frame                    =    CGRectMake(0, 0, SCREEN_WIDTH,waringHeight);
@@ -275,7 +273,7 @@ static const CGFloat waringHeight       =64.0f;
 }
 -(void)dismiss
 {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         
         self.center=CGPointMake(CGRectGetMidX(self.frame), self.frame.origin.y-waringHeight);
         
@@ -322,11 +320,11 @@ static const CGFloat waringHeight       =64.0f;
 }
 -(CGFloat)createTitleWith:(NSString*)title
 {
-    CGFloat height                  = [Utility heightWithString:title fontSize:17 width:AlertWidth-2*AlertGap];
+    CGFloat height                  = [self heightWithString:title fontSize:17 width:AlertWidth-2*AlertGap];
     self.titleLabel                 = [[UILabel alloc] initWithFrame:CGRectMake(AlertGap, AlertGap,AlertWidth-2*AlertGap,height)];
     self.titleLabel.text            = title;
     self.titleLabel.textColor       = Text_DarkGray_Color;
-    self.titleLabel.font            = FONT_SYSTEM_BOLD_SIZE(14+fontScale);
+    self.titleLabel.font            = [UIFont systemFontOfSize:14];
     self.titleLabel.textAlignment   = NSTextAlignmentCenter;
     
     [self.contentView addSubview:self.titleLabel];
@@ -336,11 +334,11 @@ static const CGFloat waringHeight       =64.0f;
 }
 -(CGFloat)createMessageWith:(NSString*)message titlePart:(CGFloat)titleHeight
 {
-    CGFloat height                  = [Utility heightWithString:message fontSize:14 width:AlertWidth-2*AlertGap];
+    CGFloat height                  = [self heightWithString:message fontSize:14 width:AlertWidth-2*AlertGap];
     self.messageLabel               = [[UILabel alloc] initWithFrame:CGRectMake(AlertGap, height+AlertGap+titleHeight, AlertWidth-2*AlertGap, height)];
     self.messageLabel.text          = message;
     self.messageLabel.textColor     = [UIColor grayColor];
-    self.messageLabel.font          = FONT_SYSTEM_SIZE(14+fontScale);
+    self.messageLabel.font          = [UIFont systemFontOfSize:14];
     self.messageLabel.textAlignment = NSTextAlignmentCenter;
     
     [self.contentView addSubview:self.messageLabel];
@@ -355,11 +353,13 @@ static const CGFloat waringHeight       =64.0f;
     
     CGFloat x=(AlertWidth/2-BtnWidth)/2;
     for (int i=0; i<2; i++) {
-        BBButton*btn        = [[BBButton alloc] initWithFrame:CGRectMake(x*(2*i+1)+BtnWidth*i, AlertGap, BtnWidth, BtnHeight)];
-        btn.bgColor         = [UIColor colorWithRed:18.0f/255.0f green:120.0f/255.0f blue:236.0f/255.0f alpha:1];
-        btn.buttonStyle     = i==0?ButtonStyleBorder:ButtonStyleFilled;
-        btn.tag             = 221+i;
-        btn.titleLabel.font = FONT_SYSTEM_SIZE(15);
+        
+        UIButton*btn          = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.frame             = CGRectMake(x*(2*i+1)+BtnWidth*i, AlertGap, BtnWidth, BtnHeight);
+        btn.tag               = 221+i;
+        btn.layer.borderColor = [UIColor blueColor].CGColor;
+        btn.layer.borderWidth = 0.5f;
+        btn.titleLabel.font   = [UIFont systemFontOfSize:15];
         
         [btn setTitle :AlertViewTitles[i] forState:UIControlStateNormal];
         
@@ -395,13 +395,25 @@ static const CGFloat waringHeight       =64.0f;
     [UIView animateWithDuration:0.3 animations:^{
         self.bgView.alpha = 0.5;
     }];
-    [self addToSuperview];
-    [self.contentView springingAnimation];
+    
+    [self addToWindow];
+    
+    CAKeyframeAnimation *popAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+    popAnimation.duration = 0.4;
+    popAnimation.values = @[[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.01f, 0.01f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.1f, 1.1f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DMakeScale(0.9f, 0.9f, 1.0f)],
+                            [NSValue valueWithCATransform3D:CATransform3DIdentity]];
+    popAnimation.keyTimes = @[@0.2f, @0.5f, @0.75f, @1.0f];
+    popAnimation.timingFunctions = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],
+                                     [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [[self.contentView layer] addAnimation:popAnimation forKey:nil];
 }
 
 - (void)dismiss
 {
-    [UIView animateWithDuration:0.4 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         
         self.contentView.center = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame)+40);
         self.bgView.alpha       = 0.0;
@@ -418,8 +430,6 @@ static const CGFloat waringHeight       =64.0f;
     _confirmBlock=nil;
 }
 @end
-
-
 
 @implementation BBAlertView
 
@@ -440,6 +450,24 @@ static const CGFloat waringHeight       =64.0f;
     self.bgView.alpha           = 0.0f;
     [self addSubview:self.bgView];
 }
+
+-(void) addToWindow
+{
+    id appDelegate = [[UIApplication sharedApplication] delegate];
+    if ([appDelegate respondsToSelector:@selector(window)])
+    {
+        UIWindow * window = (UIWindow *) [appDelegate performSelector:@selector(window)];
+        [window addSubview:self];
+    }
+}
+
+//计算文字高度 传入字体号与宽度
+-(CGFloat)heightWithString:(NSString*)string fontSize:(CGFloat)fontSize width:(CGFloat)width
+{
+    NSDictionary *attrs = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};
+    return  [string boundingRectWithSize:CGSizeMake(width, 0) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrs context:nil].size.height;
+}
+
 +(void)showDialogueWithTitle:(NSString *)title message:(NSString *)message confirmBlock:(dispatch_block_t)confirmBlock
 {
     BBDialogueView*dialogue=[[BBDialogueView alloc] initDialogueWithTitle:title message:message confirmBlock:confirmBlock];

@@ -41,11 +41,14 @@ typedef enum
 +(void) showFailedNotice:(NSString*)failInfo
          disappearBlock:(dispatch_block_t)disappearBlock;
 
-
+-(void)addToWindow;
 -(void)show;
 -(void)dismiss;
 -(void)createBgView;
 -(void)createContentView;
+
+-(CGFloat)heightWithString:(NSString*)string fontSize:(CGFloat)fontSize width:(CGFloat)width;
+
 
 @end
 

@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 #import "BBAlertView.h"
-#import "BBButton.h"
-#import "UIView+Category.h"
 
+#define SCREEN_WIDTH                 [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT                [[UIScreen mainScreen] bounds].size.height
 #define ShowBtnTitles     [NSArray arrayWithObjects:@"对话框",@"顶部成功",@"顶部失败",@"顶部警告",@"掉落成功",@"掉落失败",nil]
 
 @interface ViewController ()
@@ -22,12 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [ShowBtnTitles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
-        BBButton*btn    = [[BBButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-250*displayScale)/2, 30*(idx+1)+30*displayScale*idx, 250*displayScale, 30*displayScale)];
-        btn.bgColor     = [UIColor colorWithRed:18.0f/255.0f green:120.0f/255.0f blue:236.0f/255.0f alpha:1];
-        btn.buttonStyle = ButtonStyleBorder;
+        UIButton * btn  = [UIButton buttonWithType:UIButtonTypeSystem];
+        btn.frame       = CGRectMake((SCREEN_WIDTH-250)/2, 30*(idx+1)+30*idx, 250, 30);
         btn.tag         = 100+idx;
-        
         [btn setTitle :(NSString*)obj forState:UIControlStateNormal];
         
         [btn addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
